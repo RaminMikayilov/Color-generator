@@ -26,7 +26,7 @@ const ColorGenerator = () => {
 
   return (
     <div>
-      <div className="flex items-center justify-evenly">
+      <div className="flex flex-col md:flex-row md:pb-0 pb-5 items-center justify-evenly sticky top-0 left-0 bg-white shadow-md z-10">
         <h1 className="text-3xl text-indigo-900 font-bold p-6">
           Color Generator
         </h1>
@@ -48,7 +48,7 @@ const ColorGenerator = () => {
         </form>
       </div>
 
-      <div className="grid grid-cols-4 gap-3 p-3">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  gap-3 p-2 md:p-3 lg:p-5 xl:p-7">
         {list.map((item, index) => {
           return <SingleColor key={index} index={index} {...item} />;
         })}
