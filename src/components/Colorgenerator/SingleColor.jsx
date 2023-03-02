@@ -4,7 +4,6 @@ import rgbToHex from "../../utils/rgbToHex";
 const SingleColor = ({ rgb, index }) => {
   const color = rgb.join(",");
   const hex = rgbToHex(...rgb);
-  console.log(hex);
   return (
     <>
       <div className="flex items-center flex-col border-2 p-5 gap-3 shadow-md rounded-md">

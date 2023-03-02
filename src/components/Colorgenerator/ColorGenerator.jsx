@@ -12,7 +12,6 @@ const ColorGenerator = () => {
     try {
       const colors = new Values(color).all(10);
       setList(colors);
-      console.log(list);
       setError(false);
     } catch (error) {
       console.log(error);
@@ -29,7 +28,7 @@ const ColorGenerator = () => {
         <form onSubmit={submit}>
           <input
             type="text"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 font-medium"
+            className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 font-medium ${error && 'bg-red-400'}`}
             value={color}
             onChange={(e) => setColor(e.target.value)}
           />
