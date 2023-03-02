@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SingleColor from "./SingleColor";
 import Values from "values.js";
 
 const ColorGenerator = () => {
   const [list, setList] = useState([]);
   const [error, setError] = useState(false);
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("#00ffff");
+
+  useEffect(() => {
+    setList(new Values(color).all(10));
+  }, []);
 
   const submit = (e) => {
     e.preventDefault();
@@ -28,7 +32,9 @@ const ColorGenerator = () => {
         <form onSubmit={submit}>
           <input
             type="text"
-            className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 font-medium ${error && 'bg-red-400'}`}
+            className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 font-medium ${
+              error && "bg-red-400"
+            }`}
             value={color}
             onChange={(e) => setColor(e.target.value)}
           />
