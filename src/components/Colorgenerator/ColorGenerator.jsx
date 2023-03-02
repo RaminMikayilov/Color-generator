@@ -7,6 +7,7 @@ const ColorGenerator = () => {
   const [error, setError] = useState(false);
   const [color, setColor] = useState("#00ffff");
 
+  // default color
   useEffect(() => {
     setList(new Values(color).all(10));
   }, []);
