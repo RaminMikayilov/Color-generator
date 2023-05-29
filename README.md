@@ -2,6 +2,8 @@
 
 It's a simple React web application that allows users to input colors and copy the hex code of a color palette.
 
+![screenshot](./src/assets/images/screenshot.png)
+
 ## Installation
 
 To get started with this project, follow these steps:
